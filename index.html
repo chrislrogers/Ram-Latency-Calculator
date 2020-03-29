@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ram Latency Calculator</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="RAM Latency Calculator">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+  function calc()
+  {
+    num1 = document.getElementById("Speed").value;
+    num2 = document.getElementById("Latency").value;
+    document.getElementById("result").innerHTML = (1/( num1/2 )*num2 )*1000;
+  }
+  </script>
+  <style>
+  body{
+    font-family: "Courier New", Courier, monospace;
+    margin: 40px auto;
+    max-width: 650px;
+    color: #202020;
+    background-color:#E8E8E8;
+    line-height: 2;
+  }
+  button{
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+  }
+  h1{
+    font-size: 2em;
+  }
+  p{
+    text-align: justify;
+    font-size: 18px;
+  }
+  </style>
+</head>
+<body>
+  <h1>RAM Latency Calculator</h1>
+  <form>
+  MHz<input type="text" id="Speed" /><br>
+  CL:<input type="text" id="Latency" /><br>
+  <input type="button" onClick="calc()" Value="Calculate" />
+  </form>
+  <p>The result in nanoseconds is : <br><span id = "result"></span></p>
+</body>
+</html>
