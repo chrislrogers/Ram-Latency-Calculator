@@ -11,6 +11,7 @@ To figure out the latency of RAM in nanoseconds we need to know the CAS Latency 
 So for example if we have a Clock Speed of 3600Mhz and a CAS Latency of 18 then we can do the following:
 
 (18/3600) * 2000 = 10
+
 The lower the time in nanoseconds the faster the RAM is.
 
 # Where do I find this info?
