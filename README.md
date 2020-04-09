@@ -4,7 +4,7 @@ View live [here](https://chrislrogers.github.io/Ram-Latency-Calculator/)
 
 # How the calculator works:
 
-To figure out the latency of the RAM in nanoseconds we need to know the CAS Latency (CL) and the Clock Speed (in Mhz) of our RAM. When we know these we can use this formula to work out our nanosecond time:
+To figure out the latency of RAM in nanoseconds we need to know the CAS Latency (CL) and the Clock Speed (in Mhz) of our RAM. When we know these we can use this formula to work out our nanosecond time:
 
 (CL/Clock Speed) * 2000
 
