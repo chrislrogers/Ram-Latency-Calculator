@@ -39,12 +39,21 @@
     text-align: center;
     padding:4px;
   }
+  h2{
+    padding: 10px;
+  }
+  h3{
+    padding: 10px
+  }
   p{
     text-align: justify;
     font-size: 18px;
-    padding:4px;
+    padding: 10px;
   }
   #label{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 10px;
     background: #FFF;
     padding: 25px; 
@@ -56,10 +65,15 @@
     font-size: 18px;
     background-color: #FFF;
     display: flex;
-    padding:4px;
+    padding: 10px;
   }
   form{
     text-align: center;
+  }
+  img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
   </style>
 </head>
@@ -83,9 +97,13 @@
   <p>The lower the time in nanoseconds the faster the RAM is.<p>
   <hr>
   <h2>Where do I find this info?</h2>
-  <p>These values will typically be written on a label adhered to your RAM or on the OEM packaging/website. For an existing system you can find the values in your BIOS.<br>Example label:</p>
+  <p>These values will typically be written on a label adhered to your RAM or on the OEM packaging/website. For an existing system you can find the values in your BIOS.</p>
+  <h3>Example label 1:</h3>
   <p id="label"><b>3600MHZ 18-19-19-39 16GB(2x8GB) 1.35V</b></p>
-  <p>On the label above our Clock Speed is the value given in Mhz so "3600". To find the CAS Latency we take the first number out of the timings which are "18-19-19-39". So our CAS Latency is CL18.</p>
+  <p>On the label above our Clock Speed is the value given in Mhz so "3600". To find the CAS Latency we take the first number out of the timings which are "18-19-19-39" so our CAS latency is 18.</p>
+  <h3>Example label 2:</h3>
+  <img src="label.png" alt="2666Mhz CL19 SODIMM RAM">
+  <p>Here our clock is 2666 and our CAS latency 19</p>
   </div>
 </body>
 </html>
