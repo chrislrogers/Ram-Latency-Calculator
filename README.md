@@ -1,6 +1,6 @@
 # Ram Latency Calculator
 
-View live [here](https://chrislrogers.github.io/Ram-Latency-Calculator/ "Live Version on GitHub Pages")
+View live [here](https://chrislrogers.github.io/Ram_Latency_Calculator/ "Live Version on GitHub Pages")
 
 # How the calculator works:
 
