@@ -1,111 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Ram Latency Calculator</title>
   <meta charset="UTF-8">
   <meta name="description" content="RAM Latency Calculator">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
-  function calc()
-  {
-    num1 = document.getElementById("Speed").value;
-    num2 = document.getElementById("Latency").value;
-    document.getElementById("result").innerHTML = (num2/num1)*2000;
-  }
-  function about()
-  {
-    content = document.getElementById("About");
-    if (content.style.display === "block")
-    {
-      content.style.display = "none";
+    function calc() {
+      num1 = document.getElementById("Speed").value;
+      num2 = document.getElementById("Latency").value;
+      document.getElementById("result").innerHTML = (num2 / num1) * 2000;
     }
-    else 
-    {
-      content.style.display = "block";
+    function about() {
+      content = document.getElementById("About");
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      }
+      else {
+        content.style.display = "block";
+      }
     }
-  }
   </script>
   <style>
-  body{
-    font-family: "Courier New", Courier, monospace;
-    margin: 40px auto;
-    max-width: 650px;
-    color: #202020;
-    background-color:#E8E8E8;
-    line-height: 2;
-  }
-  h1{
-    font-size: 2em;
-    text-align: center;
-    padding:10px;
-  }
-  h2{
-    padding: 10px;
-  }
-  h3{
-    padding: 10px
-  }
-  p{
-    text-align: justify;
-    font-size: 18px;
-    padding: 10px;
-  }
-  #label{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    background: #FFF;
-    padding: 25px; 
-    width: 250px;
-    height: 50px;  
-    text-align: justify;
-  }
-  code{
-    font-size: 18px;
-    background-color: #FFF;
-    display: flex;
-    padding: 10px;
-  }
-  form{
-    text-align: center;
-  }
-  img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    body {
+      font-family: "Courier New", Courier, monospace;
+      margin: 40px auto;
+      max-width: 650px;
+      color: #202020;
+      background-color: #E8E8E8;
+      line-height: 2;
+    }
+
+    h1 {
+      font-size: 2em;
+      text-align: center;
+      padding: 10px;
+    }
+
+    h2 {
+      padding: 10px;
+    }
+
+    h3 {
+      padding: 10px
+    }
+
+    p {
+      text-align: justify;
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    #label {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+      background: #FFF;
+      padding: 25px;
+      width: 250px;
+      height: 50px;
+      text-align: justify;
+    }
+
+    code {
+      font-size: 18px;
+      background-color: #FFF;
+      display: flex;
+      padding: 10px;
+    }
+
+    form {
+      text-align: center;
+    }
+
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
   </style>
 </head>
+
 <body>
   <h1>RAM Latency Calculator</h1>
   <p>Enter your RAM speed and CAS Latency below to find out your latency in nanoseconds.</p>
   <form>
-  MHz<input type="text" id="Speed" /><br>
-  CL:<input type="text" id="Latency" /><br>
-  <input type="button" onClick="calc()" Value="Calculate" />
+    MHz<input type="text" id="Speed" /><br>
+    CL:<input type="text" id="Latency" /><br>
+    <input type="button" onClick="calc()" Value="Calculate" />
   </form>
   <p>The result in nanoseconds = <span id="result"></span></p>
   <hr>
   <button onclick="about()">About</button>
   <div id="About" style="display: none;">
-  <h2>How the calculator works:</h2>
-  <p>To figure out the latency of the RAM in nanoseconds we need to know the CAS Latency (CL) and the Clock Speed (in Mhz) of our RAM. When we know these we can use this formula to work out our nanosecond time:</p>
-  <code>(CL/Clock Speed) * 2000</code>
-  <p>So for example if we have a Clock Speed of 3600Mhz and a CAS Latency of 18 then we can do the following:</p>
-  <code>(18/3600) * 2000 = 10</code>
-  <p>The lower the time in nanoseconds the faster the RAM is.<p>
-  <hr>
-  <h2>Where do I find this info?</h2>
-  <p>These values will typically be written on a label adhered to your RAM or on the OEM packaging/website. For an existing system you can find the values in your BIOS.</p>
-  <h3>Example label 1:</h3>
-  <p id="label"><b>3600MHZ 18-19-19-39 16GB(2x8GB) 1.35V</b></p>
-  <p>On the label above our Clock Speed is the value given in Mhz so "3600". To find the CAS Latency we take the first number out of the timings which are "18-19-19-39" so our CAS latency is 18.</p>
-  <code>(18/3600) * 2000 = 10</code>
-  <h3>Example label 2:</h3>
-  <img src="label.png" alt="2666Mhz CL19 SODIMM RAM">
-  <p>Here our clock is 2666 and our CAS latency 19</p>
-  <code>(19/2666) * 2000 = 14.2535633908</code>
+    <h2>How the calculator works:</h2>
+    <p>To figure out the latency of the RAM in nanoseconds we need to know the CAS Latency (CL) and the Clock Speed (in
+      Mhz) of our RAM. When we know these we can use this formula to work out our nanosecond time:</p>
+    <code>(CL/Clock Speed) * 2000</code>
+    <p>So for example if we have a Clock Speed of 3600Mhz and a CAS Latency of 18 then we can do the following:</p>
+    <code>(18/3600) * 2000 = 10</code>
+    <p>The lower the time in nanoseconds the faster the RAM is.
+    <p>
+      <hr>
+    <h2>Where do I find this info?</h2>
+    <p>These values will typically be written on a label adhered to your RAM or on the OEM packaging/website. For an
+      existing system you can find the values in your BIOS.</p>
+    <h3>Example label 1:</h3>
+    <p id="label"><b>3600MHZ 18-19-19-39 16GB(2x8GB) 1.35V</b></p>
+    <p>On the label above our Clock Speed is the value given in Mhz so "3600". To find the CAS Latency we take the first
+      number out of the timings which are "18-19-19-39" so our CAS latency is 18.</p>
+    <code>(18/3600) * 2000 = 10</code>
+    <h3>Example label 2:</h3>
+    <img src="label.png" alt="2666Mhz CL19 SODIMM RAM">
+    <p>Here our clock is 2666 and our CAS latency 19</p>
+    <code>(19/2666) * 2000 = 14.2535633908</code>
   </div>
 </body>
+
 </html>
